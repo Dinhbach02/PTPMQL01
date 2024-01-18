@@ -1,0 +1,5 @@
+C:\Users\tranb\PTPMQL01\obj\Debug\net8.0\PTPMQL01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tranb\PTPMQL01\obj\Debug\net8.0\PTPMQL01.AssemblyInfoInputs.cache
+C:\Users\tranb\PTPMQL01\obj\Debug\net8.0\PTPMQL01.AssemblyInfo.cs
+C:\Users\tranb\PTPMQL01\obj\Debug\net8.0\PTPMQL01.csproj.CoreCompileInputs.cache
+C:\Users\tranb\PTPMQL01\obj\Debug\net8.0\PTPMQL01.sourcelink.json
