@@ -15,6 +15,10 @@ body {
     color :#ffffff;
     height: 200px;
   width: 50%;
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: thin;
 }
 
   
