@@ -21,7 +21,8 @@ body {
     border-left-style: solid;}
 
   
-  h1 {
+  h1 {  border: 5px solid red;
+
     color: white;
     text-align: center;
   }
