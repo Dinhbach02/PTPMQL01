@@ -13,20 +13,9 @@ body {
     
     font-size: 120px;
     color :#ffffff;
-    border-width: 5px;
-    border-color: red;
-    border-top-style: dotted;
-    border-right-style: solid;
-    border-bottom-style: dotted;
-    border-left-style: solid;
-    margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 80px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;}
+    height: 200px;
+  width: 50%;
+}
 
   
   h1 {  border: 5px solid red;
