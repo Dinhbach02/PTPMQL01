@@ -16,7 +16,8 @@ body {
 
   }
   p {
-    font-style: normal;
+    font-style: normal;  font-size: 40px;
+
 
     text-indent: 50px;
 
