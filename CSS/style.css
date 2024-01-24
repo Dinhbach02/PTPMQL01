@@ -16,7 +16,7 @@ body {
 
   }
   p {
-    font-style: normal;  font-size: 40px;
+    font: italic small-caps bold 12px/30px Georgia, serif;
 
 
     text-indent: 50px;
