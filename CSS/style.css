@@ -1,42 +1,12 @@
 body {
-    background-color: lightblue;
-    text-align: center;
-    font-size: 100px;
-    background-image: url("/HTML/IMG/1a.jpg");
-    font-family: "Sofia", sans-serif;
+    
 
   }
   /* Class Bach */
 
-  .Bach{
-    background-color: lightblue;
-    color: blue;
-    text-transform: uppercase;  list-style-type: circle;
-
-
-
-  }
-  p {
-    font: italic small-caps bold 12px/30px Georgia, serif;
-
-
-    text-indent: 50px;
-
-}
-
-  
-  h1 {  border: 5px solid red;
-    margin: 0 0 50px 0;
-    color: white;
-    text-align: center;width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
-    outline-style: dotted;
-
-  }
-  h2 {
-    color : rgb(255, 255, 255);
+  table, th, td 
+    {
+    border: 1px solid;
   }
 /* Class C */
 
