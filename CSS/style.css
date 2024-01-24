@@ -16,6 +16,10 @@ body {
   th {
     height: 70px;
   }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
 /* Class C */
 
   
