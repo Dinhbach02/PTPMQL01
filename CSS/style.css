@@ -15,14 +15,8 @@ body {
   }
   p {
     
-    font-size: 120px;
-    color :#ffffff;
-    height: 200px;
-  width: 50%;
-  border: 1px solid black;
-  border: 2px solid black;
-  outline-style: dotted;
-  outline-color: blue;
+    text-indent: 50px;
+
 }
 
   
