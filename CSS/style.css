@@ -1,32 +1,19 @@
-body {
+body {}
     
-
-
-
-
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+  li a {
+    display: block;
+    width: 60px;
+    background-color: #dddddd;
   }
-  /* Class Bach */
-
-  table, th, td 
-    {  clear: left;
-        background-color: yellow;
 
 
-    border: 1px solid;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th {
-    height: 70px;
-  }
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-/* Class C */
+
+
 
   
   
