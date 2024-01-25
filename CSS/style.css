@@ -1,13 +1,14 @@
 body {
     
-  float: right;
+  display: inline-block;
 
 
   }
   /* Class Bach */
 
   table, th, td 
-    {
+    {  clear: left;
+
     border: 1px solid;
   }
   table {
