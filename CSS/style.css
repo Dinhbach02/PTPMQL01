@@ -1,9 +1,11 @@
 body {
-    
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
+  background-color: coral;
+
+  width: 200px;
+  height: 65px;
+  border: 1px solid;
+  overflow: visible;
+
 
   }
   /* Class Bach */
