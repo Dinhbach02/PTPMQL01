@@ -1,11 +1,9 @@
 body {
     
-  display: inline;
-  width: 500px;
-  margin: auto;
-  border: 3px solid #73AD21;
-  position: static;
-  border: 3px solid #73AD21;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
 
   }
   /* Class Bach */
