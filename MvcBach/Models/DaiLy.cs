@@ -1,4 +1,4 @@
-namespace MvcHoang.Models
+namespace MvcBach.Models
 {
     public class DaiLy
     {

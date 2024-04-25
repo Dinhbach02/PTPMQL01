@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MvcBach")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2821f5d133123137410a950391007ccc7bd260ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71ae6773484fe6458104e0f89bcba5a9fd10956a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MvcBach")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MvcBach")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
