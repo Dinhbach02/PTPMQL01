@@ -105,7 +105,7 @@ namespace DemoMVC.Controllers
             return View(student);
         }
 
-        // POST: HeThongPhanPhoi/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
