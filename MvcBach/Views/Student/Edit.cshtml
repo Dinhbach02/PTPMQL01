@@ -1,6 +1,7 @@
 @model MvcBach.Models.Student
 
 
+
 @{
     ViewData["Title"] = "Edit";
 }
@@ -14,13 +15,33 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="StudentID" />
+            <div style="font-size : 20px"><b>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID) :
+            </th>
+
+            <i style= "color:red"><td>
+                @Html.DisplayFor(model => model.StudentID)
+            </td>
+            </i>
+
+                
+                
+              </b>  
+            </div>
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
+           
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input  style ="margin-top:20px"type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

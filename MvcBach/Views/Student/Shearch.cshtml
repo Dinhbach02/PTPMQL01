@@ -1,0 +1,51 @@
+@model IEnumerable<MvcBach.Models.Student>
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+<h1 asp-action="Index1" >Student Tìm Kiếm</h1>
+ <form asp-action="Ịndex1">
+ 
+    <input type="text" name="searchTen" placeholder="Nhập tên cần tìm...">
+    <button  asp-action="Index1" type="submit">Tìm kiếm</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

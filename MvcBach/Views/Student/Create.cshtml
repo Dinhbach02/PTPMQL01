@@ -5,10 +5,19 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="text-">Create</h1>
 
 <h4>Student</h4>
+<hr>
+    <form asp-action="Upload" enctype="multipart/form-data"> 
+    <div class="row form-control">
+        <label class="col-sm-2">Import data from Excel: </label>
+        <input type="file" name="file" class="col-sm-4">
+        <input type="submit" value="Upload" class="btn btn-primary col-sm-1">
+    </div>
+    </form>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -20,11 +29,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
+                <input  type="text" asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Age" class="control-label"></label>
+                <input  type="number" asp-for="Age" class="form-control" min="0" max ="200" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input style=" margin-top:40px;" type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

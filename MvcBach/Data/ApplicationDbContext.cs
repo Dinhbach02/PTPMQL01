@@ -8,7 +8,11 @@ namespace MvcBach.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
         
+        
+        public DbSet<HeThongPhanPhoi> HeThongPhanPhoi { get; set;}
+        public DbSet<DaiLy> DaiLy{ get; set;}
         public DbSet<Student> Student { get; set;}
+
         
 
     }

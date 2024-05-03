@@ -1,8 +1,14 @@
-namespace Mvcbach.Models 
+using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace MvcBach.Models
 {
-    public class HeThongPhanPhoi
-    {
-        public string MaHTPP { get; set; }
+    [Table("HeThongPhanPhoi")]
+     public class HeThongPhanPhoi
+     {
+        [Key]
+        public string MaHTPP {get;set;}
         public string TenHTPP { get; set; }
-    }
+   
+     }
 }
