@@ -7,12 +7,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcBach.Data;
 using MvcBach.Models;
+using MvcBach.Models.Process;
+using OfficeOpenXml;
 
 namespace MvcBach.Controllers
 {
     public class DaiLyController : Controller
     {
         private readonly ApplicationDbContext _context;
+
+        private ExcelProcess _excelProcess = new ExcelProcess();
 
         public DaiLyController(ApplicationDbContext context)
         {
@@ -24,6 +28,21 @@ namespace MvcBach.Controllers
         {
             var applicationDbContext = _context.DaiLy.Include(d => d.HeThongPhanPhoi);
             return View(await applicationDbContext.ToListAsync());
+        }
+
+
+        // Tìm Kiếm 
+        public async Task<IActionResult> Shearch()
+        {
+            return View(await _context.DaiLy.ToListAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Shearch( string searchTen)
+        {
+            
+            return View(await _context.DaiLy.Where(m => m.MaDaiLy.Contains(searchTen) || m.TenDaiLy.Contains(searchTen)|| m.MaHTPP.Contains(searchTen)).ToListAsync());
+        
         }
 
         // GET: DaiLy/Details/5
@@ -160,5 +179,61 @@ namespace MvcBach.Controllers
         {
             return _context.DaiLy.Any(e => e.MaDaiLy == id);
         }
+
+        // Upload Excel
+        public async Task<IActionResult> Upload()
+        {
+        return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file!=null)
+            {
+                string fileExtension= Path.GetExtension (file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                ModelState.AddModelError("", "Please choose excel file to upload!");
+
+                } else
+                {
+
+                var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                var filePath = Path.Combine (Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName); 
+                var fileLocation = new FileInfo(filePath).ToString();
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+
+                    await file.CopyToAsync(stream);
+
+                    var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                    //using for loop to read data from dt
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                    //create new Person object
+                    var ps = new DaiLy();
+                    //set value to attributes
+                    ps.MaDaiLy = dt.Rows[i][0].ToString(); 
+                    ps.TenDaiLy = dt.Rows[i][1].ToString(); 
+                    ps.DiaChi = dt.Rows[i][2].ToString();
+                    ps.NguoiDaiDien = dt.Rows[i][3].ToString();
+                    ps.DienThoai = dt.Rows[i][4].ToString();
+                    ps.MaHTPP = dt.Rows[i][5].ToString();
+                    
+                    //add object to context 
+                    _context.Add(ps);
+                    }
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+
+                    }
+                }
+            }
+        return View();
+
+       }
     }
 }

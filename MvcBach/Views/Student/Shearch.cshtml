@@ -1,14 +1,14 @@
 @model IEnumerable<MvcBach.Models.Student>
 
 @{
-    ViewData["Title"] = "Index1";
+    ViewData["Title"] = "Shearch";
 }
 
-<h1 asp-action="Index1" >Student Tìm Kiếm</h1>
- <form asp-action="Ịndex1">
+<h1 asp-action="Shearch" >Student Tìm Kiếm</h1>
+ <form asp-action="Shearch">
  
     <input type="text" name="searchTen" placeholder="Nhập tên cần tìm...">
-    <button  asp-action="Index1" type="submit">Tìm kiếm</button>
+    <button  asp-action="Shearch" type="submit">Tìm kiếm</button>
 </form>
 
 <table class="table">

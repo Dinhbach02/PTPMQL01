@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using OfficeOpenXml;
 using MvcBach.Data;
 using MvcBach.Models;
 using MvcBach.Models.Process;
+using X.PagedList;
 
 namespace MvcBach.Controllers
 {
@@ -21,13 +23,26 @@ namespace MvcBach.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index (int? page, int? PageSize)
         {
-            var model = await _context.Student.ToListAsync();
+            ViewBag.PageSize= new List<SelectListItem>()
+            {
+        
+            new SelectListItem() { Value="3", Text="3" }, 
+            new SelectListItem() { Value="5", Text="5" }, 
+            new SelectListItem() { Value="10",Text="10" }, 
+            new SelectListItem() { Value="15", Text="15" }, 
+            new SelectListItem() { Value="25", Text="25" },
+            new SelectListItem() { Value="50" ,Text="50" },
+            };
+            int pagesize = (PageSize ?? 3);
+            ViewBag.psize = pagesize;
+            var model = _context.Student.ToList().ToPagedList (page ?? 1, pagesize); 
             return View(model);
         }
-        
 
+        
+        // tìm kiếm
         public async Task<IActionResult> Shearch()
         {
             return View(await _context.Student.ToListAsync());
@@ -37,7 +52,7 @@ namespace MvcBach.Controllers
         public async Task<IActionResult> Shearch( string searchTen)
         {
             
-            return View(await _context.Student.Where(m => m.FullName.Contains(searchTen)).ToListAsync());
+            return View(await _context.Student.Where(m => m.FullName.Contains(searchTen) || m.StudentID.Contains(searchTen)).ToListAsync());
         
         }
 
@@ -153,7 +168,7 @@ namespace MvcBach.Controllers
         }
 
 
-
+        // Upload Excel
         public async Task<IActionResult> Upload()
         {
         return View();
@@ -205,8 +220,7 @@ namespace MvcBach.Controllers
 
        }
 
-
-
+        // Download   
         public IActionResult Download()
         {
         //Name the file when downloading

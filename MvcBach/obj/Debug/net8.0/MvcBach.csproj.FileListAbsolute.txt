@@ -280,3 +280,15 @@ C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\EPPlus.dll
 C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\EPPlus.Interfaces.dll
 C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\EPPlus.System.Drawing.dll
 C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\tranb\PTPMQL01\MvcBach\obj\Debug\net8.0\MvcBach.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\X.PagedList.Mvc.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\tranb\PTPMQL01\MvcBach\bin\Debug\net8.0\X.PagedList.Web.Common.dll

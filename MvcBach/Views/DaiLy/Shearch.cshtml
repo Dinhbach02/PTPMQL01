@@ -1,0 +1,76 @@
+@model IEnumerable<MvcBach.Models.DaiLy>
+
+@{
+    ViewData["Title"] = "Shearch";
+}
+
+<h1 stlye="justify-content:center; align-items: center;">Tìm kiếm</h1>
+<form asp-action="Shearch">
+    <input type="text" name="searchTen" placeholder="Nhập tên cần tìm...">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.MaDaiLy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenDaiLy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiaChi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NguoiDaiDien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DienThoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HeThongPhanPhoi)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDaiLy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenDaiLy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NguoiDaiDien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaHTPP)
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p style="font-size:20px">Không tìm thấy kết quả.</p>
+}
+
+<div>
+    <a  style="text-decoration: none;"asp-action="Index">Back to List</a>
+</div>

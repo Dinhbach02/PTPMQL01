@@ -7,11 +7,24 @@
 <h1>Create</h1>
 
 <h4>DaiLy</h4>
+<hr>
+    <form asp-action="Upload" enctype="multipart/form-data"> 
+    <div class="row form-control">
+        <label class="col-sm-2">Import data from Excel: </label>
+        <input type="file" name="file" class="col-sm-4">
+        <input type="submit" value="Upload" class="btn btn-primary col-sm-1">
+    </div>
+    </form>
+<hr />
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaHTPP" class="control-label"></label>
+                <select asp-for="MaHTPP" class ="form-control" asp-items="ViewBag.MaHTPP"></select>
+            </div>
             <div class="form-group">
                 <label asp-for="MaDaiLy" class="control-label"></label>
                 <input asp-for="MaDaiLy" class="form-control" />
@@ -37,10 +50,7 @@
                 <input asp-for="DienThoai" class="form-control" />
                 <span asp-validation-for="DienThoai" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaHTPP" class="control-label"></label>
-                <select asp-for="MaHTPP" class ="form-control" asp-items="ViewBag.MaHTPP"></select>
-            </div>
+            
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

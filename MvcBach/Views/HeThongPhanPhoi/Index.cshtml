@@ -1,14 +1,23 @@
 @model IEnumerable<MvcBach.Models.HeThongPhanPhoi>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;  
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>He Thong Phan Phoi</h1>
+<form asp-action="Shearch">
+ 
+    <input type="text" name="searchTen" placeholder="Nhập tên cần tìm...">
+    <button  type="submit">Tìm kiếm</button>
+</form>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a style="text-decoration: none;" asp-action="Create">Create New</a>
+    <a asp-action="Download" class="btn btn-success">Download</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -31,11 +40,35 @@
                 @Html.DisplayFor(modelItem => item.TenHTPP)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MaHTPP">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaHTPP">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaHTPP">Delete</a>
+                <a style="text-decoration: none;"asp-action="Edit" asp-route-id="@item.MaHTPP">Edit</a> |
+                <a style="text-decoration: none;"asp-action="Details" asp-route-id="@item.MaHTPP">Details</a> |
+                <a style="text-decoration: none;"asp-action="Delete" asp-route-id="@item.MaHTPP">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+
+@using (Html.BeginForm("Index", "HeThongPhanPhoi", FormMethod. Get, new { id="form1" }))
+{
+    <div class="row">
+        <div class="col-md-11">
+        @Html.PagedListPager((IPagedList) Model, page => Url.Action ("Index", new {page = page, pageSize = ViewBag.psize}),
+        
+        new X.PagedList.Mvc.Core.PagedListRenderOptions {LiElementClasses = new string[] {"page-item"}, PageClasses = new string[] {"page-link" }})
+        </div>
+        <div class="col-md-1">
+
+         @Html.DropDownList("pageSize",null,new {@class="form-select"})
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script>
+    $(document).ready(function() {
+        $("#pageSize").change(function () {
+            $("#form1").submit();
+        });
+    });
+</script>

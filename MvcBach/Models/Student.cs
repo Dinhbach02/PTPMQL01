@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Security.AccessControl;
-namespace MvcBach.Models;
+namespace MvcBach.Models{
 
  [Table("Student")]
  public class Student  {
@@ -14,4 +14,5 @@ namespace MvcBach.Models;
     
    
 
- }     
+ }    }
+  
